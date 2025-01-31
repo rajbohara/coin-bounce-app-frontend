@@ -143,7 +143,7 @@ api.interceptors.response.use(
       originalReq._isRetry = true;
 
       try {
-        await axios.get("/refresh", {
+        await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`, {
           withCredentials: true,
         });
 
