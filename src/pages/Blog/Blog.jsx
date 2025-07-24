@@ -27,6 +27,9 @@ function Blog(){
     }
     return(
         <div className={styles.blogsWrapper}>
+             <button className={styles.login} onClick={() => navigate("/submit")}>
+          Submit a Blog
+        </button>
             {blogs.map((blog) => (
                 <div id={blog._id}  className={styles.blog} onClick={()=> navigate(`/blog/${blog._id}`)}>
                     <h1>{blog.title}</h1>

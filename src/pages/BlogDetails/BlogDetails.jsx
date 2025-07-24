@@ -70,54 +70,45 @@ if (blog.length === 0) {
   }
 
   return (
-    <div className={styles.detailsWrapper}>
-        <div className={styles.left}>
-          <h1 className={styles.title}>{blog.title}</h1>
-          <div className={styles.meta}>
-            <p className={styles.author}>@{blog.authorUsername + " on " + new Date(blog.createdAt).
-            toDateString()}</p>
-          </div>
-          <div className={styles.photo}>
-            <img src={blog.photo} alt={blog.title} width={250} height={250} />
-          </div>
-          <p className={styles.content}>{blog.content}</p>
-          {ownsBlog && (
-          <div className={styles.controls}>
-            <button
-              className={styles.editButton}
-              onClick={() => {
-                navigate(`/blog-update/${blog._id}`);
-              }}
-            >
-              Edit
-            </button>
-            <button className={styles.deleteButton} onClick={deleteBlogHandler}>
-              Delete
-            </button>
-          </div>
-        )}
+  <div className={styles.blogPage}>
+  <div className={styles.container}>
+    {/* Blog Post Section */}
+    <div className={styles.postSection}>
+      <div className={styles.coverImage}>
+        <img src={blog.photo} alt={blog.title} />
+      </div>
+      <h1 className={styles.title}>{blog.title}</h1>
+      <p className={styles.meta}>
+        @{blog.authorUsername} | {new Date(blog.createdAt).toDateString()}
+      </p>
+      <p className={styles.content}>{blog.content}</p>
+      {ownsBlog && (
+        <div className={styles.controls}>
+          <button className={styles.editButton} onClick={() => navigate(`/blog-update/${blog._id}`)}>Edit</button>
+          <button className={styles.deleteButton} onClick={deleteBlogHandler}>Delete</button>
         </div>
-        <div className={styles.right}>
-        <div className={styles.commentsWrapper}>
-          <CommentList comments={comments} />
-          <div className={styles.postComment}>
-            <input
-              className={styles.input}
-              placeholder="comment goes here..."
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-            />
-            <button
-              className={styles.postCommentButton}
-              onClick={postCommentHandler}
-            >
-              Post
-            </button>
-          </div>
-        </div>
-
-        </div>
+      )}
     </div>
+
+    {/* Comments Section */}
+    <div className={styles.commentsSection}>
+      <h2 className={styles.commentsTitle}>Comments</h2>
+      <CommentList comments={comments} />
+      <div className={styles.postComment}>
+        <input
+          className={styles.input}
+          placeholder="Write a comment..."
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+        />
+        <button className={styles.postCommentButton} onClick={postCommentHandler}>
+          Post
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
   )
 }
 

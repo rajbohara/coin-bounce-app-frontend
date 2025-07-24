@@ -1,6 +1,6 @@
 .header {
     font-size: 32px;
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
   }
@@ -17,7 +17,7 @@
     border-radius: 10px;
     margin: 40px 20px;
     cursor: pointer;
-    width: 20%;
+    max-width: 300px;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -36,5 +36,6 @@
     background-color: transparent;
     color: #fff;
     margin-top: 15px;
+    font-size: clamp(16px, 1vw, 20px);
   }
   

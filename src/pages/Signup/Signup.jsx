@@ -36,7 +36,7 @@ function Signup() {
       dispatch(setUser(user));  // write redux state
 
       // redirect homepage
-      navigate("/");
+      navigate("/blogs");
     } else if (response.code === "ERR_BAD_REQUEST") {
       // display error message
       setError(response.response.data.message);
