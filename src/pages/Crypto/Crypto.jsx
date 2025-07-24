@@ -48,8 +48,8 @@ const positiveStyle = {
                 <th>#</th>
                 <th>Coin</th>
                 <th>Symbol</th>
-                <th>Price</th>
-                <th>24h</th>
+                <th>Price $</th>
+                <th>24h $</th>
             </tr>
         </thead>
         <tbody>
@@ -58,7 +58,7 @@ const positiveStyle = {
                     <td>{coin.market_cap_rank}</td>
                     <td>
                         <div className={styles.logo}>
-                           <img src={coin.image} width={40} height={40} /> {coin.name}
+                           <img src={coin.image} width={40} height={40} /> 
                         </div>
                     </td>
                     <td><div className={styles.symbole}>{coin.symbol}</div></td>

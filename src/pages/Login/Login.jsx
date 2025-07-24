@@ -34,7 +34,7 @@ function Login(){
            dispatch(setUser(user));
 
          // 2. redirect to homepage
-         navigate('/')
+         navigate('/blogs')
       }
       else if (response.code === 'ERR_BAD_REQUEST'){
          // 1. display error message

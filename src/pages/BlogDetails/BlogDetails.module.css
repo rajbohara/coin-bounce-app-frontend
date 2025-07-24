@@ -1,113 +1,143 @@
-.detailsWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    margin: 10px 50px;
-  }
+.blogPage {
+  background: #000;
+  color: #f1f1f1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Blog Post Section */
+.postSection {
+  flex: 2;
+  background: #000;
   
-  .left {
-    display: flex;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.coverImage img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.editButton,
+.deleteButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+}
+
+.editButton {
+  background: #16c784;
+}
+
+.editButton:hover {
+  background: #12a86c;
+}
+
+.deleteButton {
+  background: #ea3943;
+}
+
+.deleteButton:hover {
+  background: #d72631;
+}
+
+/* Comments Section */
+.commentsSection {
+  flex: 1;
+  
+  background: #000;
+  
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.commentsTitle {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.postComment {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  font-size: 1rem;
+  color: #f1f1f1;
+  background: #1a1a1a;
+}
+
+.postCommentButton {
+  background: #3861fb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.postCommentButton:hover {
+  background: #1f4ffd;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
     flex-direction: column;
-    width: 40%;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 25px 0;
   }
-  
-  .meta {
-    display: flex;
-    gap: 25px;
-    justify-content: flex-start;
-  }
-  
-  .photo {
-    margin: 10px auto;
-  }
-  
-  .photo img {
-    border-radius: 10px;
-  }
-  
-  .controls {
-    display: flex;
+
+  .postSection,
+  .commentsSection {
     width: 100%;
-    justify-content: flex-end;
-    margin-top: 20px;
   }
-  
-  .right {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .editButton {
-    margin-left: 10px;
-    background-color: #16c784;
-    color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    height: fit-content;
-  }
-  
-  .editButton:hover {
-    background-color: #17ae74;
-  }
-  
-  .deleteButton {
-    margin-left: 10px;
-    background-color: #ea3943;
-    color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    height: fit-content;
-  }
-  
-  .deleteButton:hover {
-    background-color: #e01822;
-  }
-  
-  .postCommentButton {
-    background-color: #3861fb;
-    color: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 15px;
-    padding: 10px 40px;
-    height: fit-content;
-    border-radius: 10px;
-  }
-  
-  .postCommentButton:hover {
-    background-color: #1f4ffd;
-  }
-  
-  .input {
-    border: none;
-    padding: 10px 20px;
-    color: #bebcc0;
-    font-size: 18px;
-    border-radius: 10px;
-    outline: none;
-    margin: 15px 10px;
-    border: 1px solid #fff;
-    flex: 1;
-  }
-  
-  .postComment {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+}

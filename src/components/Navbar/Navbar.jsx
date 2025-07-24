@@ -19,22 +19,19 @@ function Navbar() {
     return (
         <>
             <nav className={styles.navbar}>
-                <NavLink
-                    to='/' className={`${styles.logo} ${styles.inActiveStyle}`}>CoinBounce</NavLink>
+                
                 <NavLink to='/'
                     className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}
-                >Home</NavLink>
+                >News</NavLink>
                 <NavLink to='crypto'
                     className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}        //The value of isActive in the NavLink component from react-router-dom is determined internally by React Router.
-                >Cryptocurrencies</NavLink>
+                >Coins</NavLink>
                 <NavLink to='blogs' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}
                 >Blogs</NavLink>
-                <NavLink to='submit' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}
-                >Submit a blog</NavLink>
+                
                 {
                     isAuthenticated ? <div><NavLink><button className={styles.signOutButton} onClick={handleSignout}>Signout</button></NavLink></div>:
-                <div><NavLink to='login' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}
-                ><button className={styles.logInButton}>Log In</button></NavLink>
+                <div>
                 <NavLink to='signup' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}
                 ><button className={styles.signUpButton}>Sign Up</button></NavLink>
                   </div>
