@@ -1,10 +1,10 @@
 import axios from "axios";
-
-const NEWS_API_KEY = '33125d44b34844659a320d9c1e8154b4';
+const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+// const NEWS_API_KEY = '33125d44b34844659a320d9c1e8154b4';
 // process.env.REACT_APP_NEWS_API_KEY;
  
-
- const NEWS_API_ENDPOINT = `https://newsapi.org/v2/everything?q=business AND blockchain&sortBy=publishedAt&language=en&apiKey=${NEWS_API_KEY}`;
+const NEWS_API_ENDPOINT = `https://saurav.tech/NewsAPI/top-headlines/category/business/in.json`;
+// const NEWS_API_ENDPOINT = `https://newsapi.org/v2/everything?q=business AND blockchain&sortBy=publishedAt&language=en&apiKey=${NEWS_API_KEY}`;
 // const NEWS_API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${NEWS_API_KEY}`;
 
 const CRYPTO_API_ENDPOINT =
