@@ -19,7 +19,7 @@ useEffect(() =>{
     // cryptoApiCall() returns a promise, not a function.
 
     // Cleanup
-    setData([]);
+   // setData([]);
   //  If the effect function returns another function, React treats this returned function as the cleanup function
     // The cleanup function is optional in useEffect and runs when:
 //  The component unmounts.
